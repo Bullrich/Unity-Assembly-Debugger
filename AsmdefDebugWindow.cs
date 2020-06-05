@@ -44,6 +44,11 @@ namespace AssemblyDebugger
 
         private void OnGUI()
         {
+#if IGNORE_ASMDEF_DEBUG
+            EditorGUILayout.HelpBox(
+                "Utility won't work until IGNORE_ASMDEF_DEBUG is removed from Scripting Define Symbols",
+                MessageType.Error);
+#else
             if (report == null)
             {
                 report = GenerateReport(reportJson);
@@ -80,6 +85,7 @@ namespace AssemblyDebugger
                 EditorPrefs.SetBool(AsmdefDebug.LogEnabledPref, enableLog);
                 logEnabled = enableLog;
             }
+#endif
         }
     }
 }
