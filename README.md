@@ -34,3 +34,37 @@ If you wish to disable the logs, you can set this in the checkbox in the utility
 
 If, for some reason, you want to disable the plugin without removing it, you can add the Scripting Define Symbol 
 `IGNORE_ASMDEF_DEBUG` to your project and it will stop analyzing the reload times.
+
+## Installation
+
+### Adding the package to the Unity project manifest
+
+* Navigate to the `Packages` directory of your project.
+* Adjust the [project manifest file][Project-Manifest] `manifest.json` in a text editor.
+  * Ensure `https://registry.npmjs.org/` is part of `scopedRegistries`.
+    * Ensure `dev.bullrich` is part of `scopes`.
+  * Add `dev.bullrich.asmdef-debug` to `dependencies`, stating the latest version.
+
+  A minimal example ends up looking like this. 
+  Please note that the version `X.Y.Z` stated here is to be replaced with the latest released version which is currently ![Release][Version-Release].
+  ```json
+  {
+    "scopedRegistries": [
+      {
+        "name": "npmjs",
+        "url": "https://registry.npmjs.org/",
+        "scopes": [
+          "dev.bullrich"
+        ]
+      }
+    ],
+    "dependencies": {
+      "dev.bullrich.asmdef-debug": "X.Y.Z",
+      ...
+    }
+  }
+  ```
+* Switch back to the Unity software and wait for it to finish importing the added package.
+
+[Project-Manifest]: https://docs.unity3d.com/Manual/upm-manifestPrj.html
+[Version-Release]: https://img.shields.io/github/release/Bullrich/Unity-Assembly-Debugger.svg

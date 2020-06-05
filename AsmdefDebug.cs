@@ -70,7 +70,7 @@ public class AsmdefDebug
         if (!EditorPrefs.GetBool(LogEnabledPref, true))
         {
             return;
-        } 
+        }
 
         var totalTimeSeconds = report.compilationTotalTime + AssemblyReloadTime.TotalSeconds;
         if (report.assemblyCompilations != null && report.assemblyCompilations.Any())
