@@ -1,0 +1,34 @@
+{
+  "name": "dev.bullrich.asmdef-debug",
+  "version": "1.0.0",
+  "displayName": "Asmdef Debug",
+  "description": "Utility to debug the amount of time each assembly takes to reload",
+  "unity": "2018.4",
+  "unityRelease": "8f1",
+  "keywords": [
+    "asmdef",
+    "debug",
+    "unity"
+  ],
+  "homepage": "https://github.com/Bullrich/Unity-Assembly-Debugger/",
+  "bugs": {
+    "url": "https://github.com/Bullrich/Unity-Assembly-Debugger/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:Bullrich/Unity-Assembly-Debugger.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Javier Bullrich",
+    "email": "javier@bullrich.dev",
+    "url": "https://bullrich.dev"
+  },
+  "files": [
+    "*.md",
+    "*.meta",
+    "*.asmdef",
+    "*.xml",
+    "*.cs"
+  ]
+}
