@@ -43,7 +43,7 @@ If, for some reason, you want to disable the plugin without removing it, you can
 
 * Navigate to the `Packages` directory of your project.
 * Adjust the [project manifest file][Project-Manifest] `manifest.json` in a text editor.
-  * Ensure `https://registry.npmjs.org/` is part of `scopedRegistries`.
+  * Ensure `https://package.openupm.com` is part of `scopedRegistries`.
     * Ensure `dev.bullrich` is part of `scopes`.
   * Add `dev.bullrich.asmdef-debug` to `dependencies`, stating the latest version.
 
@@ -53,21 +53,21 @@ If, for some reason, you want to disable the plugin without removing it, you can
   {
     "scopedRegistries": [
       {
-        "name": "npmjs",
-        "url": "https://registry.npmjs.org/",
+        "name": "package.openupm.com",
+        "url": "https://package.openupm.com",
         "scopes": [
-          "dev.bullrich"
+          "dev.bullrich",
+          "com.openupm"
         ]
       }
     ],
     "dependencies": {
       "dev.bullrich.asmdef-debug": "X.Y.Z",
-      ...
     }
   }
   ```
 * Switch back to the Unity software and wait for it to finish importing the added package.
 
 [Project-Manifest]: https://docs.unity3d.com/Manual/upm-manifestPrj.html
-[Version-Release]: https://img.shields.io/github/v/release/Bullrich/Unity-Assembly-Debugger
-[Releases]: https://github.com/Bullrich/Unity-Assembly-Debugger/releases
+[Version-Release]: https://img.shields.io/npm/v/dev.bullrich.asmdef-debug?label=openupm&registry_uri=https://package.openupm.com
+[Releases]: https://openupm.com/packages/dev.bullrich.asmdef-debug/
