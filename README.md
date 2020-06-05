@@ -2,6 +2,8 @@
 
 Small utility to show the time it takes to compile each assembly after a reload.
 
+<img src=".github/example.png" width="300">
+
 ## Usage
 
 Just by installing this in your project it will load itself on every reload.
