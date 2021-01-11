@@ -1,6 +1,6 @@
 {
   "name": "dev.bullrich.asmdef-debug",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "displayName": "Asmdef Debug",
   "description": "Utility to debug the amount of time each assembly takes to reload",
   "unity": "2018.4",

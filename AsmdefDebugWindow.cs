@@ -11,6 +11,7 @@ namespace AssemblyDebugger
         private static string reportJson;
         private static CompilationReport report;
         private bool logEnabled;
+        private Vector2 scrollPos;
 
         [MenuItem("Window/Assemblies Debugger")]
         private static void Init()
@@ -68,10 +69,15 @@ namespace AssemblyDebugger
 
             EditorGUILayout.TextField("Compilation Report", $"{totalTimeSeconds:F2} seconds", EditorStyles.boldLabel);
             var orderedCompilations = report.assemblyCompilations.OrderBy(x => x.compilationTime).Reverse();
+
+            scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
+
             foreach (var assCom in orderedCompilations)
             {
                 EditorGUILayout.TextField(assCom.assemblyName, $"{assCom.compilationTime:0.00}s", EditorStyles.label);
             }
+
+            EditorGUILayout.EndScrollView();
 
             EditorGUILayout.FloatField("Assembly Reload Time", (float) AsmdefDebug.AssemblyReloadTime.TotalSeconds,
                 EditorStyles.boldLabel);
